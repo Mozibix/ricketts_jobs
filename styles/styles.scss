@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;0,1000;1,400&display=swap');
-@import './_color';
-@import './variables';
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;0,1000;1,400&display=swap");
+@import "./_color";
+@import "./variables";
 
 /*     font-family: "Manrope", sans-serif;
     font-style: normal; */
@@ -12,7 +12,7 @@
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-style: normal;
   height: 100%;
   width: 100%;
@@ -50,14 +50,15 @@ header {
     width: 100%;
     padding: 1rem;
     z-index: 200;
+    transition: all 1s ease-in-out;
 
-    @media screen and (max-width: 991px) {
-      position: fixed;
+    @media screen and (max-width: 1200px) {
+      // position: fixed;
       top: 0;
     }
 
     @media screen and (min-width: 992px) {
-      padding: 0.8rem 2.5rem;
+      padding: 0.8rem;
     }
 
     @media screen and (min-width: 1200px) {
@@ -68,16 +69,22 @@ header {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 2rem;
+      gap: 0.5rem;
+
+      @media screen and (min-width: 1200px) {
+        gap: 2rem;
+      }
 
       li {
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        font-weight: 500;
 
         &:hover {
           color: $primary;
+          font-weight: 700;
 
           /* add animation on hover  */
         }
@@ -95,7 +102,11 @@ header {
       align-items: center;
       justify-content: space-between;
       font-weight: 700;
-      font-size: 1.5rem;
+      text-transform: capitalize;
+      font-size: 1rem;
+      @media screen and (min-width: 1200px) {
+        font-size: 1.5rem;
+      }
 
       .menu_items,
       .contact_items,
@@ -106,13 +117,13 @@ header {
       .toogle_btn {
         display: block;
         color: $black;
-        // color: $white;
         font-size: 2rem;
         cursor: pointer;
         z-index: 100;
+        transition: all 1s ease-in-out;
       }
 
-      @media screen and (min-width: 992px) {
+      @media screen and (min-width: 1200px) {
         .menu_items,
         .contact_items,
         .navbar_right {
@@ -143,9 +154,12 @@ header {
     &_left {
       @include flex_center();
       gap: 5rem;
-      @media screen and (min-width: 1200px) {
-        gap: 10rem;
+      @media screen and (min-width: 1400px) {
+        gap: 7rem;
       }
+    }
+
+    &_right {
     }
   }
 
@@ -179,13 +193,21 @@ header {
     }
 
     &.open {
-      height: 20rem;
+      height: 25rem;
+    }
+
+    &_inner {
+      padding: 1rem 0;
+      text-transform: capitalize;
     }
 
     ul {
       text-align: center;
       display: grid;
-      gap: 1rem;
+      place-items: center;
+      padding: 0;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
 
       li {
         cursor: pointer;
@@ -200,7 +222,7 @@ header {
       }
     }
 
-    @media screen and (min-width: 992px) {
+    @media screen and (min-width: 1200px) {
       display: none;
     }
   }

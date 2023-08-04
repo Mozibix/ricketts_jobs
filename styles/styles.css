@@ -49,6 +49,55 @@
   gap: 1rem;
 }
 
+/* SCROLL ANIMATION */
+.scroll_active {
+  position: fixed;
+  transition: all;
+  transition-duration: 5s;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: all 1s ease-in-out;
+}
+
+/* ----------------------BUTTON VARIABLE---------------------- */
+.action_btn .nav_btn {
+  border: 1px solid #024430;
+  text-transform: capitalize;
+  background: transparent;
+  font-size: 1rem;
+  width: 7.5rem;
+  height: 3rem;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+  font-weight: 500;
+}
+.action_btn .nav_btn:nth-child(1) {
+  text-decoration: underline;
+  border: none;
+  color: #024430;
+}
+.action_btn .nav_btn:nth-child(1):hover {
+  background: transparent;
+  color: blue;
+}
+.action_btn .nav_btn:hover {
+  font-weight: 600;
+  background: #024430;
+  color: #fff;
+}
+.action_btn.mobile {
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.action_btn.mobile .nav_btn {
+  width: 15rem;
+}
+
 /*     font-family: "Manrope", sans-serif;
     font-style: normal; */
 * {
@@ -98,16 +147,16 @@ header .navbar {
   width: 100%;
   padding: 1rem;
   z-index: 200;
+  transition: all 1s ease-in-out;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1200px) {
   header .navbar {
-    position: fixed;
     top: 0;
   }
 }
 @media screen and (min-width: 992px) {
   header .navbar {
-    padding: 0.8rem 2.5rem;
+    padding: 0.8rem;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -119,16 +168,23 @@ header .navbar ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 0.5rem;
+}
+@media screen and (min-width: 1200px) {
+  header .navbar ul {
+    gap: 2rem;
+  }
 }
 header .navbar ul li {
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  font-weight: 500;
 }
 header .navbar ul li:hover {
   color: #024430;
+  font-weight: 700;
   /* add animation on hover  */
 }
 header .navbar ul li > span {
@@ -144,7 +200,13 @@ header .navbar_inner {
   align-items: center;
   justify-content: space-between;
   font-weight: 700;
-  font-size: 1.5rem;
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+@media screen and (min-width: 1200px) {
+  header .navbar_inner {
+    font-size: 1.5rem;
+  }
 }
 header .navbar_inner .menu_items,
 header .navbar_inner .contact_items,
@@ -157,8 +219,9 @@ header .navbar_inner .toogle_btn {
   font-size: 2rem;
   cursor: pointer;
   z-index: 100;
+  transition: all 1s ease-in-out;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
   header .navbar_inner .menu_items,
   header .navbar_inner .contact_items,
   header .navbar_inner .navbar_right {
@@ -194,9 +257,9 @@ header .navbar_left {
   align-items: center;
   gap: 5rem;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   header .navbar_left {
-    gap: 10rem;
+    gap: 7rem;
   }
 }
 header .dropdown_menu {
@@ -230,12 +293,19 @@ header .dropdown_menu {
   }
 }
 header .dropdown_menu.open {
-  height: 20rem;
+  height: 25rem;
+}
+header .dropdown_menu_inner {
+  padding: 1rem 0;
+  text-transform: capitalize;
 }
 header .dropdown_menu ul {
   text-align: center;
   display: grid;
-  gap: 1rem;
+  place-items: center;
+  padding: 0;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
 }
 header .dropdown_menu ul li {
   cursor: pointer;
@@ -247,7 +317,7 @@ header .dropdown_menu ul li > img {
   position: relative;
   inset: 0.6rem 0;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
   header .dropdown_menu {
     display: none;
   }
