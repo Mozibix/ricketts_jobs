@@ -6,11 +6,21 @@
   align-items: center;
 }
 
+/* ----------------------CONTAINER VARIABLE---------------------- */
+.container_main {
+  padding: 1rem;
+
+  @media screen and (min-width: 400px) {
+    padding: 2rem;
+  }
+}
+
 /* ----------------------TEXT VARIABLE---------------------- */
 .large_text {
   font-size: 1.8rem;
   line-height: normal;
   font-weight: 900;
+  text-transform: capitalize;
 
   @media screen and (min-width: 400px) {
     font-size: 2.5rem;
@@ -34,7 +44,11 @@
   }
 
   &.l_height {
-    line-height: 2.2rem;
+    line-height: 1.7rem;
+
+    @media screen and (min-width: 768px) {
+      line-height: 2.2rem;
+    }
   }
 }
 
@@ -48,21 +62,97 @@
 
 /* BOX VARIABLE */
 .box {
-  border: 1px solid red;
   width: 100%;
   max-width: 25rem;
+  height: 100%;
+  min-height: 27rem;
   text-align: center;
+  box-shadow: $shadow_box;
+  border-radius: 8px;
+  padding: 1rem 0;
+
+  &:nth-child(1) {
+    background: $box1;
+  }
+  &:nth-child(2) {
+    background: $box2;
+  }
+  &:nth-child(3) {
+    background: $box3;
+  }
+  &:nth-child(4) {
+    background: $box4;
+  }
+  &:nth-child(5) {
+    background: $box5;
+  }
+  &:nth-child(6) {
+    background: $box6;
+  }
+
+  &:hover {
+    transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+    cursor: pointer;
+    box-shadow: $shadow_hover;
+  }
 
   &_inner {
     display: grid;
     gap: 2rem;
-    padding: 2.5rem 1.5rem;
+    padding: 1rem;
+    color: $primary;
+
+    @media screen and (min-width: 400px) {
+      padding: 2.5rem 1.5rem;
+    }
   }
 
   &_top {
     @include flex_center();
     flex-direction: column;
     gap: 1rem;
+
+    img {
+      box-shadow: $shadow_image;
+      background: $white;
+      border-radius: 8px;
+      padding: 1rem;
+      width: 6rem;
+      aspect-ratio: 1/1;
+
+      @media screen and (min-width: 400px) {
+        padding: 1.5rem;
+        width: 7rem;
+      }
+    }
+
+    h4 {
+      font-size: 1.5rem;
+      text-transform: capitalize;
+    }
+  }
+
+  &_bottom {
+    font-size: 1rem;
+    color: $light_text;
+    height: 18vh;
+    line-height: 1.2rem;
+
+    @media screen and (min-width: 400px) {
+      letter-spacing: 0.1px;
+      line-height: 1.5rem;
+    }
+  }
+
+  .learn_more {
+    text-transform: capitalize;
+    max-width: fit-content;
+    margin: 0 auto;
+
+    &:hover {
+      font-weight: 800;
+      text-decoration: underline;
+    }
   }
 }
 
