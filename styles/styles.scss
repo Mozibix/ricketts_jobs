@@ -39,7 +39,8 @@ a {
 }
 .nav_hero_sec {
   background: $light_main_bg;
-  height: 80vh;
+  height: 100%;
+  max-height: 80vh;
 }
 
 /* --------------------------------------HEADER-------------------------------------- */
@@ -234,9 +235,17 @@ header {
     &_inner {
       width: 100%;
       height: fit-content;
-      @include flex_center();
-      justify-content: space-around;
       overflow: hidden;
+      display: grid;
+      padding: 1rem;
+
+      @media screen and (min-width: 400px) {
+        padding: 2rem;
+      }
+      @media screen and (min-width: 992px) {
+        @include flex_center();
+        justify-content: space-around;
+      }
     }
   }
 
@@ -246,6 +255,10 @@ header {
   }
 
   &_right {
+    display: none;
+    @media screen and (min-width: 1200px) {
+      display: block;
+    }
     img {
       width: 100%;
       max-width: 40rem;
@@ -257,6 +270,7 @@ header {
 
 .we_offer {
   &_sec {
+    display: none !important;
     width: 100%;
     @include flex_center();
   }
