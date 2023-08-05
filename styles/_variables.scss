@@ -31,6 +31,18 @@
   }
 }
 
+.medium_text {
+  font-size: 1.7rem;
+  font-weight: 800;
+  width: 100%;
+  max-width: 40rem;
+  margin: 0.2rem 0;
+
+  @media screen and (min-width: 576px) {
+    font-size: 2.7rem;
+  }
+}
+
 .small_text {
   font-size: 1.2rem;
   width: 100%;
@@ -58,6 +70,13 @@
 
 .text_light {
   color: $light_text;
+}
+
+.text_center {
+  text-align: center;
+}
+.text_black {
+  color: $black;
 }
 
 /* BOX VARIABLE */
@@ -143,16 +162,17 @@
       line-height: 1.5rem;
     }
   }
+}
 
-  .learn_more {
-    text-transform: capitalize;
-    max-width: fit-content;
-    margin: 0 auto;
+.learn_more {
+  text-transform: capitalize;
+  max-width: fit-content;
+  margin: 0 auto;
+  @include flex_center();
+  gap: 0.5rem;
 
-    &:hover {
-      font-weight: 800;
-      text-decoration: underline;
-    }
+  &:hover {
+    font-weight: 800;
   }
 }
 
@@ -199,6 +219,7 @@
     cursor: pointer;
     outline: none;
     font-weight: 500;
+    border-radius: 8px;
     &:nth-child(1) {
       text-decoration: underline;
       border: none;
@@ -226,5 +247,89 @@
     & .nav_btn {
       width: 15rem;
     }
+  }
+}
+
+.plan_btn {
+  border: 1px solid $primary;
+  text-transform: capitalize;
+  background: transparent;
+  color: $primary;
+  font-size: 1rem;
+  width: 14rem;
+  height: 3rem;
+  cursor: pointer;
+  outline: none;
+  font-weight: 600;
+  @include flex_center();
+  gap: 0.5rem;
+  border-radius: 8px;
+
+  @media screen and (min-width: 576px) {
+    width: 12rem;
+  }
+
+  &:hover {
+    font-weight: 700;
+    background: $primary;
+    color: $white;
+  }
+
+  &.contact {
+    background: $primary;
+    color: $white;
+    opacity: 1;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+/* SVGS */
+
+svg {
+  width: 1rem;
+  aspect-ratio: 1/1;
+  color: inherit;
+
+  &.tick {
+    color: $tick;
+  }
+
+  &.x_tick {
+    color: $x_tick;
+  }
+}
+
+.popular_sec {
+  position: absolute;
+  bottom: 1.5rem;
+  right: -3rem;
+  width: 12rem;
+  height: 3rem;
+  rotate: -45deg;
+  background: $box5;
+  color: $primary;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  @include flex_center();
+}
+
+img.bg_plan {
+  position: absolute;
+  z-index: -10;
+  width: 90%;
+  max-width: 20rem;
+  &:nth-child(1) {
+    top: 0;
+    left: 0;
+  }
+
+  &:nth-last-child(1) {
+    bottom: 0;
+    right: 0;
   }
 }
