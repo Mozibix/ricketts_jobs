@@ -54,11 +54,6 @@ header {
     z-index: 200;
     transition: all 1s ease-in-out;
 
-    @media screen and (max-width: 1200px) {
-      // position: fixed;
-      top: 0;
-    }
-
     @media screen and (min-width: 992px) {
       padding: 0.8rem;
     }
@@ -520,6 +515,152 @@ header {
 
         @media screen and (min-width: 992px) {
           font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+/* ----------------------BEST_PLAN SECTION---------------------- */
+
+.best_plan {
+  &_sec {
+    position: relative;
+    @include flex_center();
+    margin: 7rem 0;
+    border: 1px solid $x_tick;
+  }
+  &_inner {
+    display: grid;
+    place-items: center;
+    gap: 5rem;
+    padding: 5rem 0;
+  }
+
+  &_bottom {
+    &_inner {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      place-items: center;
+      flex-wrap: wrap;
+    }
+
+    .plan_box {
+      overflow: hidden;
+      border: 1px solid $x_tick;
+      background: $white;
+      border-radius: 8px;
+      box-shadow: $shadow_box;
+      transition: all 1s ease-in-out;
+      position: relative;
+
+      &:hover {
+        transition: all 1s ease-in-out;
+        box-shadow: $shadow_plan;
+      }
+      &_inner {
+        display: grid;
+        gap: 1.5rem;
+      }
+      /* TOP-BOX-SECTION */
+      &_top {
+        display: grid;
+        gap: 2rem;
+        & > div {
+          @include flex_center();
+          justify-content: flex-start;
+          gap: 2rem;
+
+          img {
+            box-shadow: $shadow_image;
+            border-radius: 8px;
+            padding: 1rem;
+            width: 4rem;
+            aspect-ratio: 1/1;
+
+            &:nth-child(1) {
+              background: $box4;
+            }
+            &:nth-child(2) {
+              background: $box5;
+            }
+            &:nth-child(3) {
+              background: $box6;
+            }
+
+            @media screen and (min-width: 400px) {
+              padding: 1.2rem;
+              width: 5rem;
+            }
+          }
+
+          .top_header {
+            display: grid;
+
+            h5 {
+              text-transform: capitalize;
+              font-weight: 700;
+              font-size: 1.2rem;
+
+              @media screen and (min-width: 576px) {
+                font-size: 2rem;
+              }
+            }
+
+            p {
+              font-size: 1.1rem;
+              font-weight: 400;
+            }
+          }
+        }
+
+        &_bottom {
+          display: grid !important;
+          gap: 1rem !important;
+
+          @media screen and (min-width: 576px) {
+            display: flex !important;
+            align-items: center;
+            justify-content: flex-start !important;
+            gap: 2rem !important;
+          }
+          & > div {
+            p {
+              @include flex_center();
+              justify-content: flex-start;
+              font-size: 0.9rem;
+
+              &:nth-last-of-type(1) {
+                font-size: 0.8rem;
+                color: $black !important;
+              }
+              span {
+                font-size: 1.2rem;
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: 0.01em;
+              }
+            }
+          }
+        }
+      }
+
+      &_bottom {
+        ul {
+          padding: 0;
+          display: grid;
+          gap: 1rem;
+
+          li {
+            @include flex_center();
+            justify-content: flex-start;
+            gap: 0.5rem;
+          }
+        }
+
+        p {
+          margin: 2rem 0 0 0;
         }
       }
     }
