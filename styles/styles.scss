@@ -307,3 +307,183 @@ header {
     }
   }
 }
+
+/* ----------------------HOW TO START SECTION---------------------- */
+.how_start {
+  &_inner {
+    display: grid;
+    gap: 3rem;
+    padding-top: 7rem;
+
+    @media screen and (min-width: 576px) {
+      padding-inline: 1rem;
+    }
+
+    @media screen and (min-width: 992px) {
+      @include flex_center();
+    }
+  }
+
+  &_left {
+    position: relative;
+    @include flex_center();
+
+    img.fly {
+      position: absolute;
+      top: -0.8rem;
+      left: 0;
+      width: 3.5rem;
+      animation: animate2 6s ease-in-out infinite;
+
+      @media screen and (min-width: 576px) {
+        top: 0;
+        width: fit-content;
+      }
+    }
+
+    img.certify {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      aspect-ratio: 1/1;
+      width: 3.5rem;
+      animation: animate1 6s ease-in-out infinite;
+
+      @media screen and (min-width: 400px) {
+        width: 18%;
+      }
+    }
+
+    .img_sec {
+      overflow: hidden;
+      img {
+        border-radius: 900px;
+        width: 95%;
+        height: fit-content;
+        margin: 0 auto;
+
+        @media screen and (min-width: 992px) {
+          max-width: 45rem;
+        }
+      }
+    }
+  }
+
+  &_right {
+    @include flex_center();
+    @media screen and (min-width: 992px) {
+      padding: 0 2.5rem;
+    }
+
+    &_top {
+      & > div {
+        @include flex_center();
+        justify-content: flex-start;
+        gap: 0.5rem;
+        font-size: 1.1rem;
+
+        .short_line {
+          width: 7rem;
+          height: 0.1rem;
+          border-width: 0.1em;
+          border: 1px solid $light_text;
+        }
+      }
+
+      h4 {
+        font-size: 1.5rem;
+        color: $primary;
+        font-weight: 600;
+        width: 100%;
+        max-width: 40rem;
+        margin: 0.2rem 0;
+
+        @media screen and (min-width: 576px) {
+          font-size: 2.4rem;
+        }
+      }
+    }
+
+    &_bottom {
+      @include flex_center();
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      &_inner {
+        display: grid;
+        gap: 1.6rem;
+      }
+      .bottom_text {
+        &_sec {
+          @include flex_center();
+          gap: 1rem;
+        }
+
+        &_left {
+          background: $primary;
+          color: $box5;
+          font-weight: 900;
+          font-size: 2rem;
+          width: 5rem;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+          @include flex_center();
+        }
+
+        &_right {
+          h5 {
+            font-size: 1.1rem;
+            color: $primary;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: capitalize;
+
+            @media screen and (min-width: 576px) {
+              font-size: 1.5rem;
+            }
+          }
+
+          p {
+            max-width: 35rem;
+            font-size: 0.8rem;
+            color: $light_text;
+            line-height: normal;
+
+            @media screen and (min-width: 576px) {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes animate1 {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(15px);
+    }
+  }
+  @keyframes animate2 {
+    0%,
+    100% {
+      transform: translateX(0px);
+    }
+    50% {
+      transform: translateX(18px);
+    }
+  }
+
+  @keyframes animate3 {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(20px);
+    }
+  }
+}
