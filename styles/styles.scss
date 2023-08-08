@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;0,1000;1,400&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap");
+
 @import "./_color";
 @import "./variables";
 
@@ -28,6 +31,8 @@ h4,
 h5,
 h6 {
   font-weight: 600;
+  font-family: "EB Garamond", serif;
+  font-style: normal;
 }
 
 ul {
@@ -674,26 +679,70 @@ header {
     @include flex_center();
   }
   &_inner {
-    @include flex_center();
+    padding: 3rem 0;
+    gap: 2rem;
+    display: grid;
+    place-items: center;
+    @media screen and (min-width: 992px) {
+      @include flex_center();
+    }
   }
 
   &_left {
-    border: 1px solid red;
-
+    @media screen and (min-width: 768px) {
+      margin-bottom: 4rem;
+    }
     &_top {
+      display: grid;
+      place-items: center;
       & > img {
-        width: 30rem;
+        width: 100%;
+        max-width: 24rem;
         aspect-ratio: 1/1;
+      }
+    }
+
+    &_bottom {
+      width: 100%;
+      max-width: 100%;
+      display: grid;
+      text-align: center;
+
+      @media screen and (min-width: 992px) {
+        text-align: left;
+        gap: 1rem;
+        max-width: 24rem;
+      }
+    }
+
+    &_left {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 1rem;
+      @media screen and (min-width: 768px) {
+        flex-direction: column;
+      }
+    }
+
+    &_right {
+      display: grid;
+      gap: 1rem;
+      @media screen and (min-width: 768px) {
+        margin-top: -10rem;
       }
     }
   }
 
   &_right {
-    border: 1px solid blue;
     @include flex_center();
 
     &_inner {
-      @include flex_center();
+      gap: 1rem;
+      display: grid;
+      place-items: center;
+      @media screen and (min-width: 768px) {
+        @include flex_center();
+      }
     }
   }
 }
