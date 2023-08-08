@@ -41,6 +41,12 @@
   @media screen and (min-width: 576px) {
     font-size: 2.7rem;
   }
+
+  &.l_height {
+    @media screen and (min-width: 992px) {
+      line-height: 2.5rem;
+    }
+  }
 }
 
 .small_text {
@@ -77,6 +83,18 @@
 }
 .text_black {
   color: $black;
+}
+
+.learn_more {
+  text-transform: capitalize;
+  max-width: fit-content;
+  margin: 0 auto;
+  @include flex_center();
+  gap: 0.5rem;
+
+  &:hover {
+    font-weight: 800;
+  }
 }
 
 /* BOX VARIABLE */
@@ -164,15 +182,90 @@
   }
 }
 
-.learn_more {
-  text-transform: capitalize;
-  max-width: fit-content;
-  margin: 0 auto;
-  @include flex_center();
-  gap: 0.5rem;
+.review {
+  &_line {
+    border: 1px solid $line;
+    margin: 1.5rem 0;
+    width: 100%;
+  }
+  &_box {
+    overflow: hidden;
+    width: 100%;
+    max-width: 30rem;
+    border: 1px solid $x_tick;
+    background: $white;
+    border-radius: 8px;
+    transition: all 1s ease-in-out;
+    position: relative;
 
-  &:hover {
-    font-weight: 800;
+    &:hover {
+      transition: all 1s ease-in-out;
+      box-shadow: $shadow_box;
+      border: 1px solid $light_border;
+    }
+
+    &_inner {
+      display: grid;
+      gap: 1rem;
+      padding: 1.5rem 2rem;
+    }
+
+    &_top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      &_left {
+        @include flex_center();
+        gap: 0.8rem;
+        img {
+          width: 4rem;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+        }
+
+        h6 {
+          color: $primary;
+          font-size: 1.1rem;
+          font-weight: 700;
+        }
+
+        p {
+          font-size: 0.8rem;
+          line-height: normal;
+          font-weight: 500;
+          color: $light_text;
+        }
+      }
+    }
+
+    &_middle {
+      color: $black;
+      font-size: 1rem;
+      line-height: normal;
+    }
+
+    &_bottom {
+      &_inner {
+        @include flex_center();
+        justify-content: space-between;
+        color: $light_text;
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+    }
+
+    &.special_bg {
+      background: #ffe7bb;
+      border-color: #ffd166;
+
+      &:hover {
+        box-shadow: $shadow_hover;
+      }
+      .review_line {
+        border-color: #ffd166;
+      }
+    }
   }
 }
 
