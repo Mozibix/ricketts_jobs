@@ -991,4 +991,34 @@ header .dropdown_menu ul li > img {
 }
 .best_plan_bottom .plan_box_bottom p {
   margin: 2rem 0 0 0;
+}
+
+/* ----------------------REVIEWS SECTION---------------------- */
+.reviews_sec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reviews_inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reviews_left {
+  border: 1px solid red;
+}
+.reviews_left_top > img {
+  width: 30rem;
+  aspect-ratio: 1/1;
+}
+.reviews_right {
+  border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reviews_right_inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=styles.css.map */
