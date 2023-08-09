@@ -70,6 +70,15 @@
   }
 }
 
+.link_text {
+  text-decoration: underline;
+  width: fit-content;
+
+  &:hover {
+    color: $link_hover;
+  }
+}
+
 .text_primary {
   color: $primary;
 }
