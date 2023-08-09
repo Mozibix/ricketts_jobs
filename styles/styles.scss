@@ -746,3 +746,100 @@ header {
     }
   }
 }
+
+/* --------------------------------------FOOTER SECTION-------------------------------------- */
+footer {
+  background: $light_main_bg;
+  margin-top: 5rem;
+  border: 1px solid $x_tick;
+  .footer {
+    &_inner {
+      display: grid;
+      justify-content: space-around;
+      gap: 2rem;
+      align-items: flex-start;
+      padding: 1rem 0;
+      @media screen and (min-width: 992px) {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+      }
+
+      ul {
+        padding: 0;
+        li {
+          display: flex;
+          gap: 0.8rem;
+          font-size: 0.8rem;
+          font-weight: 600;
+          letter-spacing: 0.1px;
+          line-height: normal;
+          color: $black;
+          width: 100%;
+          max-width: 20rem;
+
+          @media screen and (min-width: 400px) {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+
+    &_left {
+      & > div {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-transform: capitalize;
+        img {
+          width: 3rem;
+          aspect-ratio: 1/1;
+        }
+      }
+      p {
+        width: 100%;
+        max-width: 27rem;
+
+        @media screen and (min-width: 1200px) {
+          max-width: 29rem;
+        }
+      }
+    }
+
+    &_right {
+      display: grid;
+      place-items: left;
+      align-items: flex-start;
+      gap: 2rem;
+
+      @media screen and (min-width: 768px) {
+        @include flex_center();
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+
+      h3 {
+        text-transform: capitalize;
+        color: $primary;
+        font-weight: 700;
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+      }
+    }
+    &_bottom {
+      margin-top: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: capitalize;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.8rem;
+      line-height: normal;
+
+      @media screen and (min-width: 992px) {
+        font-size: 1rem;
+      }
+    }
+  }
+}
