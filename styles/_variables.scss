@@ -598,3 +598,32 @@ span.particle::before {
   opacity: 1;
   transform: translate(0);
 }
+
+/* ---------------------------PRE-LOADER--------------------------- */
+.preloader {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: $white;
+
+  &_inner {
+    position: absolute;
+    margin: -15em 0 0 -15em;
+    top: 50vh;
+    left: 50vw;
+
+    img {
+      background: $white;
+    }
+  }
+  &.hidden {
+    opacity: 0;
+    z-index: -1000;
+  }
+}
