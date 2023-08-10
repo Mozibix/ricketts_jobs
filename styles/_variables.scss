@@ -285,9 +285,10 @@
   transition-duration: 5s;
   background: rgba(255, 255, 255, 0.2);
   box-shadow: $shadow_hover;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition: all 1s ease-in-out;
+  z-index: 1000;
 }
 
 /* ----------------------BUTTON VARIABLE---------------------- */
