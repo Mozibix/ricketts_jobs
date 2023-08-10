@@ -119,7 +119,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 .learn_more:hover {
   font-weight: 800;
@@ -366,7 +366,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   border-radius: 8px;
 }
 @media screen and (min-width: 576px) {
@@ -433,6 +433,164 @@ img.bg_plan:nth-child(1) {
 img.bg_plan:nth-last-child(1) {
   bottom: 0;
   right: 0;
+}
+
+/* SCROLL INDICATION */
+.scroll_indicator {
+  display: none;
+  position: fixed;
+  right: 5px;
+  background: #f6f6f6;
+  top: 50%;
+  border-radius: 4rem;
+  transform: translateY(-50%);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 100;
+  padding: 1rem 0.2rem;
+  opacity: 0;
+  transition: all 5s ease;
+}
+@media screen and (min-width: 992px) {
+  .scroll_indicator.visible {
+    display: flex !important;
+    opacity: 1;
+  }
+}
+.scroll_indicator::before {
+  content: "";
+  position: absolute;
+  width: 0.3rem;
+  top: 2rem;
+  right: 10px;
+  background: #fff;
+  height: 9rem;
+}
+.scroll_indicator a {
+  position: relative;
+  padding: 10px;
+}
+.scroll_indicator a::after {
+  content: " ";
+  position: absolute;
+  width: 0.8rem;
+  aspect-ratio: 1/1;
+  top: 50%;
+  left: 20%;
+  transform: rotate(-45deg);
+  background: #fff;
+}
+.scroll_indicator a:hover::after {
+  background: #024430;
+}
+.scroll_indicator a.active_link::after {
+  content: " ";
+  background: #024430;
+  transform: rotate(-45deg);
+}
+.scroll_indicator a::before {
+  content: attr(link-info);
+  position: absolute;
+  right: 1.5rem;
+  top: 70%;
+  padding: 0.2rem 0.4rem;
+  display: flex;
+  transform: translateY(-50%);
+  background: #f6f6f6;
+  color: #fff;
+  font-family: "Courier Prime";
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  pointer-events: none;
+  box-shadow: #828282 0px 3px 3px 0px;
+  transition: all 1s ease;
+  opacity: 0;
+}
+.scroll_indicator a:hover::before {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+
+#projects_id {
+  position: absolute;
+  aspect-ratio: 1/1;
+}
+@media screen and (min-width: 992px) {
+  #projects_id {
+    width: 55rem;
+  }
+}
+
+span.particle {
+  position: absolute;
+  background: #70ff00;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 10000;
+}
+
+span.particle::before {
+  content: "";
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 50%;
+  animation: moveParticles 2s linear infinite;
+}
+
+@keyframes moveParticles {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(300px);
+  }
+}
+/* ADDING SCROLL ANIMATIONS */
+.animations_up {
+  opacity: 0.3;
+  transform: translateY(100px);
+  transition: all 0.4s ease-out;
+  transition-delay: 0.4s;
+}
+
+/*  */
+.animations_down {
+  opacity: 0.3;
+  transform: translateY(-100px);
+  transition: all 0.4s ease-out;
+  transition-delay: 0.4s;
+}
+
+/*  */
+.animations_left {
+  opacity: 0.3;
+  transform: translateX(-110px);
+  transition: all 0.4s ease-out;
+  transition-delay: 0.4s;
+  overflow: hidden;
+}
+@media screen and (min-width: 1400px) {
+  .animations_left_special {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.4s ease-out;
+    transition-delay: 0.4s;
+  }
+}
+
+/*  */
+.scroll-animation {
+  opacity: 1;
+  transform: translate(0);
 }
 
 /*     font-family: "Manrope", sans-serif;
